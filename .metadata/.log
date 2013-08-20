@@ -1,0 +1,19 @@
+!SESSION 2013-08-20 11:59:47.940 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.ui 4 4 2013-08-20 12:02:23.497
+!MESSAGE Plug-in 'org.eclipse.ajdt.ui' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.projectConfigure' is invalid): addajnatureaction
+
+!ENTRY org.eclipse.ui 4 4 2013-08-20 12:02:23.514
+!MESSAGE Plug-in 'org.eclipse.pde.ui' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.projectConfigure' is invalid): org.eclipse.pde.ui.ConvertedProjectWizard
+
+!ENTRY org.eclipse.ui 4 4 2013-08-20 12:02:23.530
+!MESSAGE Plug-in 'org.eclipse.wst.jsdt.ui' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.projectConfigure' is invalid): org.eclipse.wst.jsdt.ui.internal.convertProjects
+
+!ENTRY org.eclipse.ui 4 4 2013-08-20 12:02:23.551
+!MESSAGE Plug-in 'org.eclipse.jpt.jpa.ui' contributed an invalid Menu Extension (Path: 'org.eclipse.jpt.jpa.ui.menu.JpaTools' is invalid): org.eclipse.jpt.jpa.ui.generateEntities
