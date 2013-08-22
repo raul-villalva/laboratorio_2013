@@ -1,0 +1,8 @@
+package primero;
+
+public class EstudianteSecundario extends Estudiante{
+	
+	private int materia_aprobadas;
+	private double promedio;
+
+}

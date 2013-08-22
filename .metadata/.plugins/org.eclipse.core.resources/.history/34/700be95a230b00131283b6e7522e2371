@@ -1,0 +1,7 @@
+package primero;
+import java.awt.Dialog;
+public class Dialoguito extends Dialog {
+ public Dialoguito() {
+System.out.println(“Dialoguito“) ;
+}
+}

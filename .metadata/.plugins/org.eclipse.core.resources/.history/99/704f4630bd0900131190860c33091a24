@@ -1,0 +1,18 @@
+package primero;
+
+public class TestEstudiante {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Estudiante[] estudiantes = new Estudiante[5];
+		estudiantes[0] = new Estudiante();
+		estudiantes[0].nombre="saul";
+		estudiantes[0].apellido="ubaldini";
+		estudiantes[0].legajo="78982/8";
+				
+
+	}
+
+}

@@ -1,0 +1,14 @@
+package primero;
+import java.awt.Dialog;
+public class Dialoguito extends Dialog {
+ /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+public Dialoguito() {
+	 
+	 super(null);
+System.out.println("Dialoguito") ;
+}
+}

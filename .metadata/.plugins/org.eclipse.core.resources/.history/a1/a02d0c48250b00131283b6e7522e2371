@@ -1,0 +1,9 @@
+package primero;
+
+import java.util.Date;
+
+public class EstudianteUniversitario extends Estudiante {
+	
+	private Date fecha_ingreso;
+
+}

@@ -1,0 +1,15 @@
+package primero;
+
+public class TestEstudiante {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Estudiante[] estudiantes = new Estudiante[5];
+		estudiantes[0] = new Estudiante();
+				
+
+	}
+
+}

@@ -1,0 +1,43 @@
+package primero;
+import static java.lang.System.out;
+
+public class TestEstudiante {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Estudiante[] estudiantes = new Estudiante[5];
+		estudiantes[0] = new Estudiante();
+		estudiantes[0].nombre="saul";
+		estudiantes[0].apellido="ubaldini";
+		estudiantes[0].legajo="78982/8";
+		
+		estudiantes[1] = new Estudiante();
+		estudiantes[1].nombre="hipolito";
+		estudiantes[1].apellido="hirigoyen";
+		estudiantes[1].legajo="45485/5";
+		
+		estudiantes[2] = new Estudiante();
+		estudiantes[2].nombre="elver";
+		estudiantes[2].apellido="galarga";
+		estudiantes[2].legajo="78982/8";
+		
+		estudiantes[3] = new Estudiante();
+		estudiantes[3].nombre="carlos saul";
+		estudiantes[3].apellido="menem";
+		estudiantes[3].legajo="78982/8";
+		
+		estudiantes[4] = new Estudiante();
+		estudiantes[4].nombre="juan domingo";
+		estudiantes[4].apellido="Peron";
+		estudiantes[4].legajo="78982/8";
+		
+		for (int i=0; i<5;i++){
+	           out.println(estudiantes[i]);
+		}
+				
+
+	}
+
+}
