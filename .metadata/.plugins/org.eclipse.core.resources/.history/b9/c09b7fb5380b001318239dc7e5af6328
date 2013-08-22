@@ -7,7 +7,7 @@ public class Dialoguito extends Dialog {
 	 */
 	private static final long serialVersionUID = 1L;
 
- Dialoguito(Frame f) {
+public Dialoguito(Frame f) {
 	super(f);
 	 
 System.out.println("Dialoguito") ;
