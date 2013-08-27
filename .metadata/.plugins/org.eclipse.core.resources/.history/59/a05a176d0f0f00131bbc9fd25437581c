@@ -1,0 +1,10 @@
+package primero;
+
+public class Paint {
+	
+	
+	public void init(){
+		
+	}
+
+}

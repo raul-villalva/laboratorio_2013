@@ -1,0 +1,12 @@
+package primero;
+
+public class Paint {
+	
+	private FiguraGeometrica[] paleta;
+	
+	
+	public void init(){
+		
+	}
+
+}

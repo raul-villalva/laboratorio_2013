@@ -1,0 +1,6 @@
+package primero;
+
+public class Rectangulo extends FiguraGeometrica {
+	
+
+}

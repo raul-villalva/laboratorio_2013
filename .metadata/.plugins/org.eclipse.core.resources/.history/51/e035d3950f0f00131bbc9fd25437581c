@@ -1,0 +1,24 @@
+package primero;
+
+import java.util.ArrayList;
+
+public class Paint {
+	
+	private ArrayList<FiguraGeometrica> paleta = new ArrayList<FiguraGeometrica>();
+	
+	
+	public void init(){
+		
+	}
+
+
+	public FiguraGeometrica[] getPaleta() {
+		return paleta;
+	}
+
+
+	public void setPaleta(FiguraGeometrica[] paleta) {
+		this.paleta = paleta;
+	}
+
+}
