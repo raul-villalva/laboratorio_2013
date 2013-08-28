@@ -34,7 +34,7 @@ public class Paint {
 		r.setColor("que se yo");
 		r.setAlto(51);
 		r.setAncho(54);
-		paleta.add(r);
+		paleta.add(r)
 		
 
 	}
