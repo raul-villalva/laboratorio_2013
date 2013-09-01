@@ -8,4 +8,6 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="primero.FiguraGeometrica"/>
 <fullyQualifiedTypeName name="primero.Paint"/>
+<fullyQualifiedTypeName name="primero.TestSingleton"/>
+<fullyQualifiedTypeName name="primero.Singleton"/>
 </qualifiedTypeNameHistroy>
