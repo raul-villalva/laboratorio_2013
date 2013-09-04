@@ -1,0 +1,35 @@
+package primero;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Comparator;
+
+import org.ietf.jgss.Oid;
+
+public class PainTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		PaintMe p = new PaintMe();
+		p.init();
+		Comparator<FiguraGeometrica> comparator = new Comparator<FiguraGeometrica>() {
+			
+			@Override
+			public int compare(FiguraGeometrica o1, FiguraGeometrica o2) {
+				// TODO Auto-generated method stub
+				return o1.area() > o2.area()? 1:(o1.area()<o2.area()?-1:0);
+			}
+		};
+		Collection<E>.sort(p.getPaleta(),comparator);
+		for(FiguraGeometrica fg : p.getPaleta()){
+			fg.dibujar();
+			
+		}
+
+	}
+
+}

@@ -1,0 +1,9 @@
+class InstrumentoDeCuerda implements InstrumentoMusical { 
+ void hacerSonar(){ 
+System.out.println(“Sonar Cuerdas”); 
+ } 
+public String queEs() { 
+ return “Instrumento de Cuerda”; 
+ } Facultad de Informática - UNLP 
+Año 2012 
+} 

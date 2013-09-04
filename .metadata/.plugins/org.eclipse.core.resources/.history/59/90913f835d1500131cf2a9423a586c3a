@@ -1,0 +1,39 @@
+package primero;
+
+
+import java.util.Collections;
+import java.util.Comparator;
+
+
+public class PainTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		PaintMe p = new PaintMe();
+		p.init();
+		System.out.println("///////////////////////////////");
+		for(FiguraGeometrica fg : p.getPaleta()){
+			fg.dibujar();
+			
+		}
+		
+		Comparator<FiguraGeometrica> comparator = new Comparator<FiguraGeometrica>() {
+			
+			@Override
+			public int compare(FiguraGeometrica o1, FiguraGeometrica o2) {
+				// TODO Auto-generated method stub
+				return o1.area() > o2.area()? 1:(o1.area() <o2.area()?-1:0);
+			}
+		};
+		Collections.sort(p.getPaleta(),comparator);
+		
+		for(FiguraGeometrica fg : p.getPaleta()){
+			fg.dibujar();
+			
+		}
+
+	}
+
+}

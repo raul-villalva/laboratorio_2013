@@ -1,6 +1,6 @@
 package primero;
 
-public abstract class FiguraGeometrica {
+public abstract class FiguraGeometrica implements Comparable<FiguraGeometrica>{
 	
 	private String color;
 
@@ -13,6 +13,7 @@ public abstract class FiguraGeometrica {
 	}
 	
 	public abstract void dibujar();
+	public abstract int area();
 	
 
 }

@@ -1,0 +1,15 @@
+
+
+
+public class PaintTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Paint p = new Paint();
+		p.init();
+
+	}
+
+}

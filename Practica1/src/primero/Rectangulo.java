@@ -20,8 +20,18 @@ public class Rectangulo extends FiguraGeometrica {
 	}
 	@Override
 	public void dibujar() {
-		System.out.println("soy un cuadrado y tengo"+(this.ancho*this.alto));
+		System.out.println("soy un cuadrado y tengo "+(this.ancho*this.alto));
 		
+	}
+	@Override
+	public int area() {
+		// TODO Auto-generated method stub
+		return alto * ancho;
+	}
+	@Override
+	public int compareTo(FiguraGeometrica o) {
+		
+		return this.area() > o.area()?1:(this.area() < o.area()?-1:0);
 	}
 
 
