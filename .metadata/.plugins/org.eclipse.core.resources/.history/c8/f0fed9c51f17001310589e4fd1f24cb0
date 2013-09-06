@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+
+
+public class pruebaHash {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		HashSetAgregados<Integer> hst = new HashSetAgregados<Integer>();
+		
+		System.out.println(hst.size());
+		ArrayList<Integer> ara= new ArrayList<Integer>();
+		ara.add(1);
+		ara.add(3);
+		System.out.println(hst.getCantidadAgregados());
+
+	}
+
+}

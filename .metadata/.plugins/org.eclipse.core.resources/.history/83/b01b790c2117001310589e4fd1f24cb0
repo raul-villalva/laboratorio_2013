@@ -1,0 +1,29 @@
+import java.util.Collection;
+import java.util.HashSet;
+
+public class HashSetAgregados<E> extends HashSet<E>
+
+{
+   private HashSet<Integer> = new HashSet<Integer>;
+   private int cantidadAgregados = 0;
+   public HashSetAgregados() {
+   }
+   public HashSetAgregados(int initCap, float loadFactor) {
+	   super(initCap, loadFactor);
+   }
+   @Override 
+   public boolean add(E e) {
+	   cantidadAgregados++;
+	   System.out.println("aca");
+	   return super.add(e); 
+   }
+   @Override 
+   public boolean addAll(Collection<? extends E> c) {
+	   System.out.println(c.size());
+	   cantidadAgregados += c.size();
+	   return super.addAll(c);
+   }
+   public int getCantidadAgregados(){
+	   return cantidadAgregados; 
+   }
+}

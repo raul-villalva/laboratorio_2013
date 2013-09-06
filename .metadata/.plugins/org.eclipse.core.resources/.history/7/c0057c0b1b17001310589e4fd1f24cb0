@@ -1,0 +1,12 @@
+
+public class pruebaHash {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		HashSetAgregados hst = new HashSetAgregados<int>();
+
+	}
+
+}
