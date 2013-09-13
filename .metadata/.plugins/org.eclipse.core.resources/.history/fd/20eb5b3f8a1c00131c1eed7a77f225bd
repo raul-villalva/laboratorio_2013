@@ -1,0 +1,28 @@
+package juegos.estrategia.ia;
+
+import java.util.HashMap;
+import java.util.Set;
+import juegos.estrategia.Planet;
+import juegos.estrategia.PlanetWars;
+
+public class ConcreteIA extends AbstractIA {
+	
+	private DynamicStrategy dynamicStrategy = null;
+
+	public void makeAMove(PlanetWars pw) {	
+		this.dynamicStrategy.makeAMove(pw);
+	}
+
+	@Override
+	public DynamicStrategy getStrategy() {
+		// TODO Auto-generated method stub
+		return dynamicStrategy;
+	}
+
+	@Override
+	public void setStrategy(DynamicStrategy ds) {
+		// TODO Auto-generated method stub
+		this.dynamicStrategy = ds;
+	}
+
+}

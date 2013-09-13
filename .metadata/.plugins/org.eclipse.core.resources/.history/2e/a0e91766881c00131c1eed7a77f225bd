@@ -1,0 +1,11 @@
+package juegos.estrategia.ia;
+
+import juegos.estrategia.PlanetWars;
+
+public abstract class AbstractIA {
+	
+	//*public Strategy
+	public abstract DynamicStrategy getStrategy();
+	
+	public abstract void makeAMove(PlanetWars pw);
+}

@@ -1,0 +1,5 @@
+package juegos.estrategia.ia;
+
+public interface DynamicStrategy {
+
+}

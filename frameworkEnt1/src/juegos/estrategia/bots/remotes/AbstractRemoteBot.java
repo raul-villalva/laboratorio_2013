@@ -2,6 +2,7 @@ package juegos.estrategia.bots.remotes;
 
 import juegos.estrategia.PlanetWars;
 import juegos.estrategia.ia.AbstractIA;
+import juegos.estrategia.ia.DefaultStrategy;
 
 public abstract class AbstractRemoteBot {
 
@@ -34,6 +35,17 @@ public abstract class AbstractRemoteBot {
 		} catch (Exception e) {
 			// Owned.
 		}
+	}
+	
+	public void ChangeStrategy(AbstractIA ai,String algo){
+		if(algo == "default"){
+			
+			ai.setStrategy(new DefaultStrategy());
+			
+		}else if(algo =="cualquiera "){
+			
+		}
+		
 	}
 
 }
