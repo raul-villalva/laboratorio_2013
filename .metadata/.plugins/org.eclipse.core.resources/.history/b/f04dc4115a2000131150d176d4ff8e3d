@@ -1,0 +1,115 @@
+package clase;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class TestEstudiante {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ArrayList<Estudiante> estudiantes = new ArrayList<Estudiante>();
+		
+		Estudiante est = new Estudiante();
+		est.setNombre("pepe");
+		est.setApellido("argento");
+		est.setMateriasAprobadas(2);
+		est.setLegajo("75674");
+		estudiantes.add(est);
+		est = new Estudiante();
+		est.setNombre("lala");
+		est.setApellido("po");
+		est.setMateriasAprobadas(54);
+		est.setLegajo("4552221");
+		estudiantes.add(est);
+		est = new Estudiante();
+		est.setNombre("popo");
+		est.setApellido("gil");
+		est.setMateriasAprobadas(54);
+		est.setLegajo("3554");
+		estudiantes.add(est);
+		est = new Estudiante();
+		est.setNombre("saul");
+		est.setApellido("ubaldini");
+		est.setMateriasAprobadas(17);
+		est.setLegajo("12356");
+		estudiantes.add(est);
+		est = new Estudiante();
+		est.setNombre("tipito");
+		est.setApellido("los");
+		est.setMateriasAprobadas(89);
+		est.setLegajo("444444");
+		estudiantes.add(est);
+		est = new Estudiante();
+		est.setNombre("quico");
+		est.setApellido("quico");
+		est.setMateriasAprobadas(3);
+		est.setLegajo("789954");
+		estudiantes.add(est);
+		est = new Estudiante();
+		est.setNombre("peter");
+		est.setApellido("panic");
+		est.setMateriasAprobadas(17);
+		est.setLegajo("333333");
+		estudiantes.add(est);
+		
+		
+		Collections.sort(estudiantes, new Comparator<Estudiante>() {
+
+		
+
+			@Override
+			public int compare(Estudiante e1, Estudiante e2) {
+				
+				return e1.getMateriasAprobadas() > e2.getMateriasAprobadas()?1:(e1.getMateriasAprobadas() < e2.getMateriasAprobadas()?-1:0);
+			}
+		});
+		
+		for(Estudiante e : estudiantes){
+			System.out.println("nombre:    "+e.getNombre());
+			System.out.println("aprobadas: "+e.getMateriasAprobadas());
+		}
+		
+		
+		System.out.println("////////////////////////////////////////");
+		
+		
+		
+		
+		
+		Collections.sort(estudiantes, new Comparator<Estudiante>() {
+
+		
+
+			@Override
+			public int compare(Estudiante e1, Estudiante e2) {
+				
+				return e1.getMateriasAprobadas() < e2.getMateriasAprobadas()?1:(e1.getMateriasAprobadas() > e2.getMateriasAprobadas()?-1:0);
+			}
+		});
+		
+		for(Estudiante e : estudiantes){
+			System.out.println("nombre:    "+e.getNombre());
+			System.out.println("aprobadas: "+e.getMateriasAprobadas());
+		}
+		
+		
+		System.out.println("////////////////////////////////////////");
+		Collections.sort(estudiantes, new Comparator<Estudiante>() {
+
+			@Override
+			public int compare(Estudiante o1, Estudiante o2) {
+				// TODO Auto-generated method stub
+				return o1.getLegajo().compareTo(o2.getLegajo());
+			}});
+		for(Estudiante e : estudiantes){
+			System.out.println("nombre:    "+e.getNombre());
+			System.out.println("aprobadas: "+e.getMateriasAprobadas());
+		}
+		
+
+	}
+
+}

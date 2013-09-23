@@ -1,0 +1,16 @@
+import java.util.Vector;
+
+
+public class Stack {
+	
+		private java.util.Vector items;
+		public Stack() {  }
+		public void push(Object item) {  
+	         items.add(item);
+		}
+		public Object pop() {  } 
+		public boolean isEmpty() {  }
+		public void finalize() {  }
+		}
+
+}

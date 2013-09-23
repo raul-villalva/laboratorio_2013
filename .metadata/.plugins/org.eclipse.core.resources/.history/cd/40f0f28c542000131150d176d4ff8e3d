@@ -1,0 +1,8 @@
+package clase;
+
+public class Estudiante {
+	private String apellido, nombre, legajo;
+	private int edad;
+	private int materiasAprobadas;
+
+}

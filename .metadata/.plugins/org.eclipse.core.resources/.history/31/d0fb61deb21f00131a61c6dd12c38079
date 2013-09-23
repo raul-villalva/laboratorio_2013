@@ -1,0 +1,6 @@
+import java.util.AbstractSet;
+
+
+public class StringConverterSet<E> extends AbstractSet<E> {
+
+}

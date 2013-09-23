@@ -1,0 +1,30 @@
+import java.util.Vector;
+
+
+public class Stack {
+	
+	private class StackEnum {
+		
+	}
+	
+		private java.util.Vector items;
+		public Stack() {  }
+		public void push(Object item) {  
+	         items.add(item);
+		}
+		public Object pop() { 
+			Object obj = items.get(items.size()-1);
+		    items.remove(items.size()-1);
+		    return obj;
+		} 
+		public boolean isEmpty() { 
+			return items.size() == 0;  
+		}
+		public void finalize() {  }
+		
+		public StackEnum getStackEnum(){
+			return new StackEnum();
+		}
+		}
+
+

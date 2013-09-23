@@ -1,0 +1,9 @@
+package enumerativos;
+
+public enum Notas {
+	
+	private String america;
+	
+	Do('C'),Re,Mi,Fa,Sol,La,Si;
+
+}

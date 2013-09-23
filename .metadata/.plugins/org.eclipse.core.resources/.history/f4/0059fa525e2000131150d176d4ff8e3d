@@ -1,0 +1,20 @@
+package enumerativos;
+
+public enum Notas {
+	
+	Do("C"),
+	Re("D"),
+	Mi("E"),
+	Fa("F"),
+	Sol("G"),
+	La("H"),
+	Si("C");
+	private String america;
+	
+	public Notas(String ame){
+		america = ame;
+	}
+	
+
+
+}

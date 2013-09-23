@@ -1,0 +1,23 @@
+package clase;
+
+import java.util.ArrayList;
+
+public class TestEstudiante {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ArrayList<Estudiante> estudiantes = new ArrayList<Estudiante>();
+		
+		Estudiante est = new Estudiante();
+		est.setNombre("pepe");
+		est.setApellido("argento");
+		est.
+		setMateriasAprobadas(2);
+		est.getLegajo("75674");
+		
+
+	}
+
+}
