@@ -1,0 +1,7 @@
+package Ventana;
+
+public class Algo {
+	int id;
+	String nombre;
+
+}

@@ -1,0 +1,49 @@
+package Ventana;
+
+import java.util.Vector;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class SubirPedido extends JFrame {
+
+	/**
+	 * 
+	 */
+	JLabel label = new JLabel("texto: ");
+	JTextField texto = new JTextField();
+	JButton boton = new JButton("nada");
+	
+	private static final long serialVersionUID = 1L;
+	
+	public SubirPedido(){
+		
+		setSize(500,500);
+		setLayout(null);
+		 
+		JComboBox<Algo> combo = new JComboBox<Algo>();
+		Vector<Algo> v = new Vector<Algo>()
+		getContentPane().add(boton);
+		boton.setBounds(100, 4, 100, 20);
+		getContentPane().add(label);
+		label.setBounds(0, 30, 100, 20);
+		getContentPane().add(texto);
+		texto.setBounds(110, 30, 100, 20);
+		
+		setVisible(true);
+		
+		
+		
+		
+	}
+	
+	public static void main(String[] arg){
+		SubirPedido su = new SubirPedido();
+	}
+	
+	
+
+}

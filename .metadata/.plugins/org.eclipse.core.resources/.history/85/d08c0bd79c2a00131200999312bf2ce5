@@ -1,0 +1,47 @@
+package vista;
+
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class Ventana extends JFrame {
+
+	/**
+	 * @param args
+	 */
+	
+
+	JPanel panel1 = new JPanel();
+	JPanel panel2 = new JPanel();
+	JPanel panel3 = new JPanel();
+	JComboBox<String> destino,origen, niños,adultos, tipo, pais;
+	JButton boton = new JButton("enviar");
+	
+	
+	
+	
+	public Ventana(){
+		setSize(400,400);
+		String[] arreglo = {"","Buenos Aires", "Montevideo", "Mar Del Plata", "Punta Del Este"};
+		destino = new JComboBox<>(arreglo);
+		origen = new JComboBox<>(arreglo);
+		
+	
+
+	    
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		
+		
+
+	}
+
+}

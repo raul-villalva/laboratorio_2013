@@ -1,0 +1,13 @@
+import javax.swing.JFrame;
+import javax.swing.JTable;
+
+
+public class tabla extends JFrame {
+	
+	JTable tabla = new JTable();
+	
+	
+	public tabla(){
+		add(tabla);
+	}
+}

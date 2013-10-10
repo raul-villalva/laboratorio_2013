@@ -1,0 +1,7 @@
+package dao;
+
+public interface MenuDao {
+
+	
+	public void guardar(Menu m);
+}

@@ -1,0 +1,63 @@
+package ui;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.WindowConstants;
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane.CloseAction;
+
+public class AltaMenu extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
+	/**
+	 * @param args
+	 */
+	
+	JTextField nombre = new JTextField();
+	JTextArea desc = new JTextArea();
+	JTextField precio = new JTextField();
+	
+	
+	public AltaMenu(){
+		JLabel label = new JLabel("nombre: ");
+		this.setSize(300, 400);
+		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+		setLayout(null);
+		{
+			
+			getContentPane().add(label);
+			label.setBounds(0,0,70,20);
+			getContentPane().add(nombre);
+			nombre.setBounds(80, 0, 70, 20);
+		}
+		{
+			label = 
+			
+			
+			
+		}
+		
+		
+		
+		
+		
+		setVisible(true);
+		
+		
+		
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		AltaMenu alta = new AltaMenu();
+
+	}
+
+}

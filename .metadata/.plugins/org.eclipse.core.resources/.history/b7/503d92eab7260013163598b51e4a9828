@@ -1,0 +1,17 @@
+import java.applet.Applet;
+import java.awt.Graphics;
+
+
+public class PrimerApplet extends Applet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	public void paint(Graphics g){
+		
+	}
+	
+
+}

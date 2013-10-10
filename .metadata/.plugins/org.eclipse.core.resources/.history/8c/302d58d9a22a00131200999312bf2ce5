@@ -1,0 +1,11 @@
+package dao;
+
+public class daoMySql implements interfaceDao {
+
+	@Override
+	public void guardar(Reserva r) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

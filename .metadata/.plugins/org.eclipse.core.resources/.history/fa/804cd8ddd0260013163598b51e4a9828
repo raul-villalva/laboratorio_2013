@@ -1,0 +1,25 @@
+package Ventana;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class Ventana extends JFrame {
+
+	public Ventana(){
+		
+		setSize(100,100);
+		JButton boton = new JButton("lalalala");
+		
+		add(boton,BorderLayout.CENTER);
+		
+	}
+	
+	
+	public static void main(String[] args) {
+	    Ventana ven = new Ventana();
+	    ven.setVisible(true);
+	}
+
+}

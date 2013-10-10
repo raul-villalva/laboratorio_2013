@@ -1,0 +1,28 @@
+package Ventana;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class SubirPedido extends JFrame {
+
+	/**
+	 * 
+	 */
+	
+	JButton boton = new JButton("nada");
+	private static final long serialVersionUID = 1L;
+	
+	public SubirPedido(){
+		
+		
+		setLayout(null);
+		
+		
+		getContentPane().add(boton);
+		
+		
+	}
+	
+	
+
+}

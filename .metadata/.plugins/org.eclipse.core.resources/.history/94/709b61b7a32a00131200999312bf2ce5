@@ -1,0 +1,18 @@
+package dao;
+
+public class daoMySql implements interfaceDao {
+
+	@Override
+	public void guardar(Reserva r) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}

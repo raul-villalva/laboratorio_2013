@@ -1,0 +1,17 @@
+import junit.framework.AssertionFailedError;
+
+import org.junit.*;
+
+
+public class primer {
+	
+	@Test
+	public int probar(){
+		return 1*1;
+		
+		
+
+		
+	}
+
+}

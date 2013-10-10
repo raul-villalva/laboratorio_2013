@@ -1,0 +1,11 @@
+import javax.swing.JApplet;
+
+
+public class Colores extends JApplet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+}

@@ -1,0 +1,22 @@
+import java.applet.Applet;
+import java.awt.Graphics;
+import java.awt.event.MouseListener;
+
+
+public class PrimerApplet extends Applet implements MouseListener {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	public void paint(Graphics g){
+	   g.drawOval(15, 15, 100, 100);	
+	}
+	
+    public void start(){
+    	
+    }
+	
+
+}

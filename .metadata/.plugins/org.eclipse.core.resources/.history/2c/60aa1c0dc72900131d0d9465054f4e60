@@ -1,0 +1,39 @@
+package vista;
+
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
+import javax.swing.JFrame;
+
+public class Ventana extends JFrame {
+
+	/**
+	 * @param args
+	 */
+	
+
+	Jpanel panel1 = new Ventana();
+	Jpanel panel2 = new Ventana();
+	Jpanel panel3 = new Ventana();
+	
+	
+	
+	public Ventana(){
+		setSize(400,400);
+		
+		Jpanel panel 
+		
+		setLayout(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
+	    
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		
+		
+
+	}
+
+}

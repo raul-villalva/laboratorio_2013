@@ -1,0 +1,24 @@
+package Ventana;
+import javax.swing.JFrame;
+import javax.swing.JTable;
+
+
+public class tabla extends JFrame {
+	
+	JTable tabla = new JTable();
+	
+	
+	public tabla(){
+		setSize(500,500);
+		tabla.setValueAt(nombre, 1, 1);
+		add(tabla);
+	}
+	
+	
+	public static void main(String[] arg){
+		
+		tabla t = new tabla();
+		t.setVisible(true);
+		
+	}
+}

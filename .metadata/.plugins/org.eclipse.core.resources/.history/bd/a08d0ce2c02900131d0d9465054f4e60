@@ -1,0 +1,15 @@
+package vista;
+
+import javax.swing.JFrame;
+
+public class ventana extends JFrame {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,17 @@
+import junit.framework.AssertionFailedError;
+
+import org.junit.*;
+
+
+public class primer {
+	
+	@Test
+	public void probar(){
+		assertEqual(1,1);
+		
+		
+
+		
+	}
+
+}

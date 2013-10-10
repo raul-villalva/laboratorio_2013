@@ -1,0 +1,26 @@
+package dao;
+
+import java.sql.DriverManager;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
+
+import Modelo.Menu;
+
+public class MenuDaoMysql implements MenuDao {
+
+	@Override
+	public void guardar(Menu m) {
+		Statement st = null;
+		Connection c = null;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			c = DriverManager.getConnection("jdbc:mysql//localhost:3306/comidas");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}

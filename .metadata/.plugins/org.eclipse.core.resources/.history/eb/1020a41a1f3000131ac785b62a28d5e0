@@ -1,0 +1,36 @@
+package ui;
+
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class AltaMenu extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
+	/**
+	 * @param args
+	 */
+	
+	JTextField nombre = new JTextField();
+	JTextArea desc = new JTextArea();
+	JTextField precio = new JTextField();
+	
+	public AltaMenu(){
+		
+		this.setSize(500, 200)
+		
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,29 @@
+package Ventana;
+import javax.swing.JFrame;
+import javax.swing.JTable;
+
+
+public class tabla extends JFrame {
+	
+	JTable tabla = new JTable();
+	
+	public tabla(){
+		setSize(500,500);
+		tabla.setValueAt("nombre", 0, 1);
+		String[] st = {"nombre", "apellido"};
+		String[][] valores = {{"raul","villalva"},{"pedro","alfonzo"},{"juan","perez"}};
+		tabla = new JTable(st,valores);
+		/*tabla.setValueAt("apellido", , 1);
+		tabla.setValueAt("gato gato", 3, 1);
+		tabla.setV*/
+		add(tabla);
+	}
+	
+	
+	public static void main(String[] arg){
+		
+		tabla t = new tabla();
+		t.setVisible(true);
+		
+	}
+}

@@ -1,0 +1,11 @@
+package dao;
+
+public class Reserva {
+	      
+	String origen    
+	, destino 
+	, ninos    
+	, pais     
+	, categoria;
+
+}

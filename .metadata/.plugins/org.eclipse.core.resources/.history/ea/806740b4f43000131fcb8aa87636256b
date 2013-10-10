@@ -1,0 +1,12 @@
+import org.junit.*;
+
+
+public class primer {
+	
+	@Test
+	public void probar(){
+
+		
+	}
+
+}

@@ -1,0 +1,61 @@
+package Ventana;
+import javax.swing.JFrame;
+import javax.swing.JTable;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.WindowConstants;
+import javax.swing.table.DefaultTableModel;
+
+
+public class Tabla extends JFrame {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2499672780602884915L;
+	JTable tabla = new JTable();
+	
+	public Tabla(){
+		setSize(500,500);
+		tabla.setSize(100, 50);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		DefaultTableModel m = new DefaultTableModel(0,2);
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedLookAndFeelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//tabla.setValueAt("nombre", 0, 1);
+		String[] st = {"nombre", "apellido"};
+		m.addRow(st);
+		String[] val = {"raul","villalva"};
+		m.addRow(val);
+		
+		String[][] valores = {{"raul","villalva"},{"pedro","alfonzo"},{"juan","perez"}};
+		tabla.setModel(m);
+		
+		
+		/*tabla.setValueAt("apellido", , 1);
+		tabla.setValueAt("gato gato", 3, 1);
+		tabla.setV*/
+		add(tabla);
+	}
+	
+	
+	public static void main(String[] arg){
+		
+		Tabla t = new Tabla();
+		t.setVisible(true);
+		
+	}
+}

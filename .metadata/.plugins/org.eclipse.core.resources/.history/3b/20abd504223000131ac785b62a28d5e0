@@ -1,0 +1,15 @@
+package Modelo;
+
+public class Menu {
+
+	/**
+	 * @param args
+	 */
+	
+		public int id;
+		public String nombre;
+		puString
+
+	
+
+}

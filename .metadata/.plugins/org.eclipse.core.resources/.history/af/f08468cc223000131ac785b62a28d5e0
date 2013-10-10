@@ -1,0 +1,13 @@
+package dao;
+
+import Modelo.Menu;
+
+public class MenuDaoMysql implements MenuDao {
+
+	@Override
+	public void guardar(Menu m) {
+		Class.forName("com.mysql.jdbc.Driver");
+
+	}
+
+}
