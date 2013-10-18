@@ -1,0 +1,19 @@
+
+public class Criba {
+
+	/**
+	 * @param args
+	 */
+	int[100] numeros;
+	boolean[100] tachado;
+	
+	public void inicializar(){
+		
+	};
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

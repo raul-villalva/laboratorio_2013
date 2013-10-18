@@ -1,0 +1,39 @@
+
+public class Calc  {
+	boolean[] tachado = new boolean[100];
+	
+	public void inicializar(){
+		for(int i = 0; i < 100; i++){
+			tachado[i] = true;
+		}
+	}
+
+
+	public static void main(String[] args) {
+		
+	Calc c = new Calc();
+	c.inicializar();
+	long startTime = System.currentTimeMillis();
+
+  
+			for(int i = 0; i< 100 ;i++){
+			
+			if(c.tachado[i])
+				for(int k =2 ; k<i;k++)
+					if(i % k == 0){
+					
+		              c.tachado[i] = false;
+				
+					for(int j=i;j<100;j+=i)
+				
+								c.tachado[j] = false;
+						
+					
+						
+					}
+			}
+	}
+}
+
+
+				

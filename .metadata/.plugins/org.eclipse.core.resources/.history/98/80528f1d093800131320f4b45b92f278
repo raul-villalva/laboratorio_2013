@@ -1,0 +1,11 @@
+package eje3;
+
+import java.util.EnumSet;
+import java.util.Set;
+
+
+public class Materia {
+	
+	Set<String> nomina = new EnumSet();
+
+}

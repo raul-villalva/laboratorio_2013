@@ -1,0 +1,43 @@
+
+public class Criba implements Runnable
+
+{
+
+	/**
+	 * @param args
+	 */
+	int[] numeros =  new int[100];
+	boolean[] tachado = new boolean[100];
+	Thread[] hilos = new Thread[10];
+	
+	public void inicializar(){
+		for(int i = 0; i < 100; i++){
+			numeros[i] = i;
+			tachado[i] = true;
+			
+		}
+		for(int i=0;i<10;i++){
+			Calc r = new Calc();
+			hilos[i] = new Thread(this,"hilo n°"+1);
+			
+		}
+		
+	};
+	
+	public static void main(String[] args) {
+
+		for(int i=0;i<10;i++){
+			Calc r = new Calc();
+			
+			
+		}
+
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

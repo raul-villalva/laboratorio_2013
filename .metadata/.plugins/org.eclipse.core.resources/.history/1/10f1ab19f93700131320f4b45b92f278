@@ -1,0 +1,11 @@
+package eje2;
+
+import java.util.ArrayList;
+
+public class Linea {
+	
+	ArrayList<Punto> puntos = new ArrayList<Punto>();
+	
+	
+
+}

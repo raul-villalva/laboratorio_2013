@@ -1,0 +1,52 @@
+import java.applet.Applet;
+import java.awt.ActiveEvent;
+import java.awt.Button;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+
+
+
+ 
+public class AppletInteractua extends Applet { 
+ private Button start=new Button("Contar"); 
+ private Button onoff=new Button("Suspender"); 
+ private TextField t= new TextField(10); 
+ private boolean runflag = true; 
+ private int count=0; 
+			 public void init() { 
+			 add(t); 
+			 start.addActionListener(new StartL()); 
+			 add(start); 
+			 onoff.addActionListener(new OnOffL()); 
+			 add(onoff); 
+			 } 
+			 
+			 
+				 public void go(){ 
+					 while (true){ 
+					 try { 
+						 Thread.currentThread().sleep(100); 
+					 } catch (InterruptedException ex) {} 
+					 	if (runflag) t.setText(Integer.toString(count++)); 
+					 } 
+				 }
+				 
+				 class StartL implements ActionListener{ 
+				
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						go(); 
+						
+					} 
+					 } 
+					 
+					 class OnOffL implements ActionListener{
+							 @Override
+							 public void actionPerformed(ActionEvent e){ runflag = !runflag; } 
+					 
+					}
+}
+}

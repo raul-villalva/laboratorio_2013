@@ -1,0 +1,13 @@
+package ejercicio1;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class ChequearLogin {
+	Map<String,Usuario> usuarios = new HashMap<String,Usuario>();
+	
+	public ChequearLogin(){
+		usuarios.put("juan", new Usuario("juan", "lala", "juannn"))
+	}
+
+}

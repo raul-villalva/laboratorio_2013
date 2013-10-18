@@ -1,0 +1,10 @@
+package eje3;
+
+import java.util.Set;
+
+
+public class Materia {
+	
+	Set<Estudiante> nomina = new EnumSet<Estudiante>();
+
+}

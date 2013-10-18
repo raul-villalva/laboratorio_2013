@@ -1,0 +1,12 @@
+package eje3;
+
+
+import java.util.HashSet;
+
+
+
+public class Materia<E> {
+	
+	HashSet<String> nomina = new HashSet<String>();
+
+}

@@ -1,0 +1,71 @@
+import java.applet.Applet;
+import java.awt.Button;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+
+
+
+ 
+public class AppletInteractua extends Applet implements Runnable { 
+ /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+private Button start=new Button("Contar"); 
+ private Button onoff=new Button("Suspender"); 
+ private TextField t= new TextField(10); 
+ private boolean runflag = true; 
+ Thread hilo;
+ AppletInteractua yo;
+ private int count=0; 
+			 public void init() {
+				 yo = this;
+				 
+			 add(t); 
+			 start.addActionListener(new StartL()); 
+			 add(start); 
+			 onoff.addActionListener(new OnOffL()); 
+			 add(onoff); 
+			 } 
+			 
+			 
+				/* public void go(){ 
+					 while (true){ 
+					 try { 
+						 Thread.currentThread().sleep(100); 
+					 } catch (InterruptedException ex) {} 
+					 	if (true) t.setText(Integer.toString(count++)); 
+					 } 
+				 }*/
+				 
+				 class StartL implements ActionListener{ 
+				
+
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								hilo = new Thread(yo, "reloj");
+								hilo.start();
+								
+							} 
+			      } 
+					 
+					 class OnOffL implements ActionListener{
+							 @SuppressWarnings("deprecation")
+							@Override
+							 public void actionPerformed(ActionEvent e){ hilo.stop(); hilo = null;} 
+					 
+					}
+
+					@Override
+					public void run() {
+						 while (true){ 
+							 try { 
+								 Thread.currentThread().sleep(1000); 
+							 } catch (InterruptedException ex) {} 
+							 	if (true) t.setText(Integer.toString(count++)); 
+							 } 
+						
+					}
+}

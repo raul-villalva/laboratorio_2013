@@ -1,0 +1,60 @@
+
+public class Criba implements Runnable
+
+{
+
+	/**
+	 * @param args
+	 */
+	int[] numeros =  new int[100];
+	boolean[] tachado = new boolean[100];
+	
+	
+	public void inicializar(){
+		for(int i = 0; i < 100; i++){
+			numeros[i] = i;
+			tachado[i] = true;
+			
+		}
+		
+		
+	};
+	
+	public static void main(String[] args) {
+         Criba c = new Criba();
+         Thread[] hilos = new Thread[10];
+         c.inicializar();
+         for(int i=0;i<10;i++){
+ 			Calc r = new Calc();
+ 			hilos[i] = new Thread(c,"hilo n°"+i+1);
+ 			
+ 		}
+         
+		for(int i=0;i<10;i++){
+			hilos[i].start();			
+		}
+
+	}
+
+	@Override
+	public void run() {
+		
+		for(int i = 0; i< 100 ;i++){
+			
+			if(tachado[i]){
+				for(int k =2 ; k<(i-1);k++){
+					if(i % k > 0){
+						synchronized (tachado) {
+							tachado[i] = false;
+						}
+						
+					}
+				}
+				  
+				
+			}
+		}
+		
+	}
+
+}

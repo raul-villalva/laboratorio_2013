@@ -6,7 +6,8 @@ public class Reserva {
 	, destino 
 	, ninos    
 	, pais     
-	, categoria, adultos;
+	, categoria
+	, adultos;
 
 
 }

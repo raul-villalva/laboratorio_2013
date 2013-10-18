@@ -1,0 +1,14 @@
+
+public class Criba {
+
+	/**
+	 * @param args
+	 */
+	int[] numeros;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,15 @@
+package eje3;
+
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+
+import primero.*;
+
+
+
+public class Materia {
+	
+	LinkedHashSet<Estudiante> nomina = new LinkedHashSet<Estudiante>();
+
+}
