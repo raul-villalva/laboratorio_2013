@@ -1,0 +1,39 @@
+package modelo;
+
+public class Paso {
+
+	private Movimiento movimiento;
+	private int velocidad;
+	private int tiempo;
+	
+	public Movimiento getMovimiento() {
+		return movimiento;
+	}
+	public void setMovimiento(Movimiento movimiento) {
+		this.movimiento = movimiento;
+	}
+	/**
+	 * @return the velocidad
+	 */
+	public int getVelocidad() {
+		return velocidad;
+	}
+	/**
+	 * @param velocidad the velocidad to set
+	 */
+	public void setVelocidad(int velocidad) {
+		this.velocidad = velocidad;
+	}
+	/**
+	 * @return the tiempo
+	 */
+	public int getTiempo() {
+		return tiempo;
+	}
+	/**
+	 * @param tiempo the tiempo to set
+	 */
+	public void setTiempo(int tiempo) {
+		this.tiempo = tiempo;
+	}
+}

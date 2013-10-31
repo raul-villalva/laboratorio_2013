@@ -1,0 +1,18 @@
+package ui;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class Ventana extends JFrame{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	JPanel botones = new JPanel();
+	
+	public Ventana(){
+		
+	}
+
+}

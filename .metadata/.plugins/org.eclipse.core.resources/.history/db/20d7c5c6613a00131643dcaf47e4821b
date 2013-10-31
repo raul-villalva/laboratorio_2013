@@ -1,0 +1,19 @@
+package eje3;
+
+
+
+
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+import primero.Estudiante;
+import primero.EstudiantePrimario;
+
+
+
+public class Materia {
+	public SortedSet<EstudiantePrimario> sortedSet = new TreeSet<>();
+	Estudiante es = new EstudiantePrimario();
+	es.
+
+}

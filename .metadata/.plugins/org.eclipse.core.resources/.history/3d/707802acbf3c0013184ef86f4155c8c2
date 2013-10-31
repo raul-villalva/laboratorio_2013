@@ -1,0 +1,63 @@
+package ui;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.WindowConstants;
+
+public class Ventana extends JFrame{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	JPanel botones = new JPanel();
+	JButton giro = new JButton("giro");
+	JButton avance = new JButton("avance");
+	JButton retroceso = new JButton("retroceso");
+	JButton izquierda = new JButton("izquierda");
+	JButton derecha = new JButton("derecha");
+	JLabel label_velocidad = new JLabel("velocidad: ");
+	JTextField velocidad  = new JTextField("1");
+	JLabel label_tiempo = new JLabel("tiempo: ");
+	JTextField tiempo  = new JTextField("1");
+	
+	{
+	JPanel cabeza = new JPanel();
+	JLabel titulo = new JLabel("ROBOTS EN LA PISTA DE BAILE"); 
+	JButton comenzar = new JButton("Comenzar");
+	}
+	
+	public Ventana(){
+		setSize(700, 500);
+		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+		
+		{
+		this.getContentPane().add(botones,BorderLayout.SOUTH);
+		botones.add(giro);
+		botones.add(avance);
+		botones.add(retroceso);
+		botones.add(izquierda);
+		botones.add(derecha);
+		botones.add(label_velocidad);
+		botones.add(velocidad);
+		botones.add(label_tiempo);
+		botones.add(tiempo);
+		}
+		
+		
+		
+		
+		
+	}
+	
+	public static void main(String[] arg){
+		Ventana v = new Ventana();
+		v.setVisible(true);
+		
+	}
+}

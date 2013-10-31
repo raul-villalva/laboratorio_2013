@@ -1,0 +1,104 @@
+package ui;
+
+import java.awt.BorderLayout;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.WindowConstants;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
+
+public class Ventana extends JFrame{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	JPanel botones = new JPanel();
+	JButton giro = new JButton("giro");
+	JButton avance = new JButton("avance");
+	JButton retroceso = new JButton("retroceso");
+	JButton izquierda = new JButton("izquierda");
+	JButton derecha = new JButton("derecha");
+	JLabel label_velocidad = new JLabel("velocidad: ");
+	JTextField velocidad  = new JTextField(3);
+	JLabel label_tiempo = new JLabel("tiempo: ");
+	JTextField tiempo  = new JTextField(3);
+	
+	
+	JPanel cabeza = new JPanel();
+	JLabel titulo = new JLabel("ROBOTS EN LA PISTA DE BAILE"); 
+	JButton comenzar = new JButton("Comenzar");
+	
+	JPanel centro = new JPanel();
+	JPanel eleccion = new JPanel();
+	
+	
+	public Ventana(){
+		setSize(700, 500);
+		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+		
+		{
+			this.getContentPane().add(botones,BorderLayout.SOUTH);
+			botones.add(giro);
+			botones.add(avance);
+			botones.add(retroceso);
+			botones.add(izquierda);
+			botones.add(derecha);
+			botones.add(label_velocidad);
+			botones.add(velocidad);
+			velocidad.setText("1");
+			botones.add(label_tiempo);
+			botones.add(tiempo);
+			tiempo.setText("1");
+	
+		}
+		
+		{
+			this.getContentPane().add(cabeza,BorderLayout.BEFORE_FIRST_LINE);
+			cabeza.add(titulo);
+			cabeza.add(comenzar);
+		}
+		{
+			this.getContentPane().add(centro,BorderLayout.CENTER);
+			
+		
+			BufferedImage myPicture;
+			try {
+				myPicture = ImageIO.read(new File("images/robot.png"));
+				JLabel picLabel = new JLabel(new ImageIcon(myPicture));
+				centro.add(eleccion);
+				eleccion.setLayout(null);
+				eleccion.add(picLabel);
+				picLabel.setBounds(50, 50, 50, 50);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	public static void main(String[] arg){
+		Ventana v = new Ventana();
+		v.setVisible(true);
+		
+	}
+}

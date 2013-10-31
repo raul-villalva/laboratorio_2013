@@ -1,0 +1,24 @@
+package bean;
+
+import java.lang.reflect.Field;
+public class Principal {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+	Usuario u = new Usuario();
+	Class c = u.getClass();
+	
+	
+	for(Field f : c.getFields()){
+		if(f.isAnnotationPresent(AlmacenarAtributo.class)){
+			out.p
+			
+		}
+		
+	}
+
+	}
+
+}

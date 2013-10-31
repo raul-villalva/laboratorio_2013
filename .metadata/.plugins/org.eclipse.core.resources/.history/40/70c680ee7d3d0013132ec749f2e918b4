@@ -1,0 +1,9 @@
+package modelo;
+
+import java.util.ArrayList;
+
+public class Ritmo {
+	
+	private ArrayList<Paso> pasos = new ArrayList<Paso>();
+
+}

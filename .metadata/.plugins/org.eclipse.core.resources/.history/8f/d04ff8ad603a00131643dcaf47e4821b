@@ -1,0 +1,17 @@
+package eje3;
+
+
+
+import java.util.LinkedHashSet;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+import primero.EstudiantePrimario;
+
+
+
+public class Materia {
+	SortedSet<EstudiantePrimario> sortedSet = new TreeSet<>();
+	LinkedHashSet<EstudiantePrimario> nomina = new LinkedHashSet<EstudiantePrimario>();
+
+}

@@ -1,0 +1,12 @@
+package primero;
+
+public class Estudiante {
+	public String apellido, 
+	nombre , legajo;
+	
+	
+	public String toString(){
+		return apellido+"   "+nombre+"  "+legajo;
+	}
+
+}

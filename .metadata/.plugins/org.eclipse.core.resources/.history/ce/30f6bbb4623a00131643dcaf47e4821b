@@ -1,0 +1,42 @@
+package eje3;
+
+
+
+
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+import primero.Estudiante;
+import primero.EstudiantePrimario;
+
+
+
+public class Materia {
+	public SortedSet<EstudiantePrimario> sortedSet = new TreeSet<>();	
+	public static void main(String[] arg){
+		 SortedSet<Estudiante> sortedSet = new TreeSet<>();
+		 Estudiante est = new Estudiante();
+		 est.legajo= "78854";
+		 est.nombre = "pedro";
+		 sortedSet.add(est);
+		 est = new Estudiante();
+		 est.legajo= "0234234";
+		 est.nombre = "pablo";
+		 sortedSet.add(est);
+		 est = new Estudiante();
+		 est.legajo= "123123";
+		 est.nombre = "juan";
+		 sortedSet.add(est);
+		 
+		 for(Estudiante e : sortedSet){
+			 System.out.println(e.nombre);
+		 }
+		
+		 est = new Estudiante();
+		 est.legajo= "00000000";
+		 est.nombre = "judas";
+		 sortedSet.add(est);
+	}
+
+
+}

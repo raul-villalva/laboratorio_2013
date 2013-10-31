@@ -1,0 +1,22 @@
+package bean;
+
+import java.lang.reflect.Field;
+
+public class Principal {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+	Usuario u = new Usuario();
+	Class c = u.getClass();
+	
+	
+	if(Field f : c.getFields()){
+		
+		
+	}
+
+	}
+
+}

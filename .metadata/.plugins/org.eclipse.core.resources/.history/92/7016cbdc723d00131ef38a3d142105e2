@@ -1,0 +1,11 @@
+package modelo;
+
+public enum Movimiento {
+	
+	GIRO("giro"),
+	AVANCE("avance"),
+	RETROCESO("retroceso"),
+	IZQUIERDA("izquierda"),
+	DERECHA("derecha");
+
+}

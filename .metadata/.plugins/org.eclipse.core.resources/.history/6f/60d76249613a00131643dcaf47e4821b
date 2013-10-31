@@ -1,0 +1,12 @@
+package primero;
+
+public class Estudiante implements Comparable<T> {
+	public String apellido, 
+	nombre , legajo;
+	
+	
+	public String toString(){
+		return apellido+"   "+nombre+"  "+legajo;
+	}
+
+}

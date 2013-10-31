@@ -1,0 +1,23 @@
+package modelo;
+
+import java.util.ArrayList;
+
+public class Ritmo {
+	
+	private ArrayList<Paso> pasos = new ArrayList<Paso>();
+
+	/**
+	 * @return the pasos
+	 */
+	public ArrayList<Paso> getPasos() {
+		return pasos;
+	}
+
+	/**
+	 * @param pasos the pasos to set
+	 */
+	public void setPasos(ArrayList<Paso> pasos) {
+		this.pasos = pasos;
+	}
+
+}

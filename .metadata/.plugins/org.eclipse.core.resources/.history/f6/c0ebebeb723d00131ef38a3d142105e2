@@ -1,0 +1,17 @@
+package modelo;
+
+public enum Movimiento {
+	
+	String nombre;
+	
+	GIRO("giro"),
+	AVANCE("avance"),
+	RETROCESO("retroceso"),
+	IZQUIERDA("izquierda"),
+	DERECHA("derecha");
+	
+	public Movimiento(String mov){
+		nombre = mov;
+	}
+
+}

@@ -1,0 +1,36 @@
+package ui;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class Ventana extends JFrame{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	JPanel botones = new JPanel();
+	JButton giro = new JButton("giro");
+	JButton avance = new JButton("avance");
+	JButton retroceso = new JButton("retroceso");
+	JButton izquierda = new JButton("izquierda");
+	JButton derecha = new JButton("derecha");
+	
+	
+	public Ventana(){
+		
+		this.getContentPane().add(botones);
+		botones.add(giro);
+		botones.add(avance);
+		botones.add(retroceso);
+		botones.add(izquierda);
+		botones.add(derecha);
+		
+		
+		
+		
+		
+	}
+
+}

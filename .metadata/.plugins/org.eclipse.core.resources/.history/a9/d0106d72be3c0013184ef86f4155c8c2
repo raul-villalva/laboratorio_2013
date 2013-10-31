@@ -1,0 +1,45 @@
+package ui;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.WindowConstants;
+
+public class Ventana extends JFrame{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	JPanel botones = new JPanel();
+	JButton giro = new JButton("giro");
+	JButton avance = new JButton("avance");
+	JButton retroceso = new JButton("retroceso");
+	JButton izquierda = new JButton("izquierda");
+	JButton derecha = new JButton("derecha");
+	
+	
+	public Ventana(){
+		setSize(400, 500);
+		this.getContentPane().add(botones,BorderLayout.AFTER_LINE_ENDS);
+		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+		botones.add(giro);
+		botones.add(avance);
+		botones.add(retroceso);
+		botones.add(izquierda);
+		botones.add(derecha);
+		
+		
+		
+		
+		
+	}
+	
+	public static void main(String[] arg){
+		Ventana v = new Ventana();
+		v.setVisible(true);
+		
+	}
+}

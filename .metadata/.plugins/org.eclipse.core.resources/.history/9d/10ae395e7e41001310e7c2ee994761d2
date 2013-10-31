@@ -1,0 +1,13 @@
+class Partido { 
+ Partido() throws FutbolException{} 
+ void evento() throws FutbolException{} 
+ void jugada() throws EquipoIncompleto, 
+ Falta{} 
+ void penal(){} 
+} 
+ 
+inteface Tormenta { 
+ void evento() throws Lluvia; 
+ void diluvio() throws Lluvia; 
+} 
+ 
