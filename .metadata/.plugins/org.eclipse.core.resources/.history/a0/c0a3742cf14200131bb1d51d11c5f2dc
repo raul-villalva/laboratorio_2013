@@ -1,0 +1,33 @@
+package bean;
+
+import java.lang.reflect.Field;
+public class Principal {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+	Usuario u = new Usuario();
+	u.setApellido("gil de cuarta");
+	u.setLegajo("nada");
+	u.setNombre("nombre");
+	Class c = u.getClass();
+	
+	
+	for(Field f : c.getFields()){
+		if(f.isAnnotationPresent(AlmacenarAtributo.class)){
+			try {
+				System.out.println(f.getName()+"  "+f.get(u));
+			} catch (IllegalArgumentException | IllegalAccessException e) {
+				
+				e.printStackTrace();
+			}
+			
+		}
+		
+	}
+	System.out.println("l");
+
+	}
+
+}

@@ -1,0 +1,9 @@
+package proceso;
+
+public @interface Servidor {
+	
+	String direccion();
+	int puesto();
+//String Archivo();
+
+}

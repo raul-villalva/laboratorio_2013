@@ -1,0 +1,30 @@
+package proceso;
+
+public class Principal {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		String sentenciaCliente;
+		String sentenciaMayuscula;
+		ServerSocket socketBienvenida = new ServerSocket(6789);
+		while(true) {
+		Socket socketConectado = socketBienvenida.accept();
+		BufferedReader inFromClient = new BufferedReader(new,InputStreamReader(socketConectado.getInputStream()));
+		sentenciaCliente = inFromClient.readLine();
+		sentenciaMayuscula = sentenciaCliente.toUpperCase() + '\n';
+		DataOutputStream outToClient =
+		new DataOutputStream(socketConectado.getOutputStream());
+		outToClient.writeBytes(sentenciaMayuscula);
+		socketConectado.close();
+
+		}
+
+
+
+
+	}
+
+}

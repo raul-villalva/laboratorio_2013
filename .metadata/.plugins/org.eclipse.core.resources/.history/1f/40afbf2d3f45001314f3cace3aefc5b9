@@ -1,0 +1,14 @@
+package proceso;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
+
+
+@Target(ElementType.class);
+public @interface Servidor {
+	
+	String direccion();
+	int puesto();
+//String Archivo();
+
+}

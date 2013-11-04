@@ -1,0 +1,40 @@
+package proceso;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.Socket;
+
+@Servidor(direccion="127.0.0.1",puerto=3333)
+public class PrincipalCliente {
+
+	/**
+	 * @param args
+	 * @throws IOException 
+	 */
+
+	public static void main(String[] args) throws IOException {
+		String sentencia;
+		
+		Class c = getClass;
+		String sentenciaModificada;
+		BufferedReader inFromUser =
+		new BufferedReader(new InputStreamReader(System.in));
+		sentencia = inFromUser.readLine();
+		Socket socketCliente = new Socket("127.0.0.1", 3333);
+		DataOutputStream outToServer = new DataOutputStream(socketCliente.getOutputStream());
+		outToServer.writeBytes(sentencia + '\n');
+		BufferedReader inFromServer =
+		new BufferedReader(new
+		InputStreamReader(socketCliente.getInputStream()));
+		sentenciaModificada = inFromServer.readLine();
+		System.out.println("DESDE EL SERVIDOR: " + sentenciaModificada);
+		socketCliente.close();
+
+
+
+
+	}
+
+}

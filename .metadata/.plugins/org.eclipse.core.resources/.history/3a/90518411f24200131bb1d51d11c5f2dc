@@ -1,0 +1,23 @@
+package proceso;
+
+public class Principal {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		import java.io.*;
+		import java.net.*;
+		/** TCPServer convierte a mayúscula el msg. que recibe desde el cliente*/
+		class TCPServer {
+		public static void main(String argv[]) throws Exception {
+		String sentenciaCliente;
+		String sentenciaMayuscula;
+		ServerSocket socketBienvenida = new ServerSocket(6789);
+		while(true) {
+		Socket socketConectado = socketBienvenida.accept();
+
+
+	}
+
+}

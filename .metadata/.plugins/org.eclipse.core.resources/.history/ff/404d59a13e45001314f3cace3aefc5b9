@@ -1,0 +1,7 @@
+public class TestDeprecated { 
+
+ public void hacer() { 
+ System.out.println("Testeando: 'Deprecated'"); 
+ } 
+} 
+ 

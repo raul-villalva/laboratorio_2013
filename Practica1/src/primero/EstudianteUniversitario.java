@@ -2,7 +2,7 @@ package primero;
 
 import java.util.Date;
 
-public class EstudianteUniversitario extends Estudiante {
+public class EstudianteUniversitario  {
 	
 	private Date fecha_ingreso;
 
