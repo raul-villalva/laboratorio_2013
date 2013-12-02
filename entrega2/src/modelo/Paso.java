@@ -29,4 +29,8 @@ public class Paso {
 	public void setTiempo(int tiempo) {
 		this.tiempo = tiempo;
 	}
+	
+	public String toString(){
+		return "{Paso:{movimiento:"+movimiento.getNombre()+",velocidad:"+velocidad+",tiempo:"+tiempo+"]}";
+	}
 }

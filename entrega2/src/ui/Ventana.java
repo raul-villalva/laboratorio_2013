@@ -5,8 +5,15 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -20,18 +27,24 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import anotaciones.RemoteBot;
+import anotaciones.Robots;
 import modelo.Movimiento;
 import modelo.Paso;
+import modelo.PistaDeBaile;
 import modelo.Ritmo;
+import modelo.Robot;
 
-public class Ventana extends JFrame{
+public class Ventana  extends JFrame implements Runnable {
 
 	
 	private static final long serialVersionUID = 1L;
 	
 	int width = 800 ;
 	int heigth = 500;
-	ArrayList<modelo.Robot> robots = new ArrayList<modelo.Robot>();
+	
+	Ventana yo = this;
 	
 	
 	JPanel botones = new JPanel();
@@ -44,6 +57,7 @@ public class Ventana extends JFrame{
 	JTextField velocidad  = new JTextField(3);
 	JLabel label_tiempo = new JLabel("tiempo: ");
 	JTextField tiempo  = new JTextField(3);
+	JLabel consola = new JLabel("Estado: Listo");
 	
 	
 	JPanel cabeza = new JPanel();
@@ -54,13 +68,16 @@ public class Ventana extends JFrame{
 	JPanel eleccion = new JPanel();
 	
 	
-	ArrayList<Pista> lista_pistas = new ArrayList<Pista>();
+	ArrayList<RobotUi> lista_robotUi = new ArrayList<RobotUi>();
 	JPanel pistas = new JPanel();
 	int cantidad = 0;
 	
-	 ButtonGroup group = new ButtonGroup();
+	PistaDeBaile pistaDeBaile = new PistaDeBaile();
 	
-	class Pista extends JPanel {
+	ButtonGroup group = new ButtonGroup();
+	
+	
+	class RobotUi extends JPanel {
 
 		
 		private static final long serialVersionUID = 1L;
@@ -68,7 +85,7 @@ public class Ventana extends JFrame{
 		JRadioButton radioButton = new JRadioButton();
 		JLabel muestra = new JLabel("muestra");
 		
-		public Pista(){
+		public RobotUi(){
 			
 		
 			setBorder(BorderFactory.createLineBorder(Color.black));
@@ -94,16 +111,22 @@ public class Ventana extends JFrame{
 			
 				
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
 		}
 		
 	}
+	 
+
+		 
+		 
 	
 	
-	public Ventana(){
+	
+	
+	
+	public Ventana() {
 		setSize(width, heigth);
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		
@@ -117,14 +140,14 @@ public class Ventana extends JFrame{
 			
 					int i = 0;
 					if(cantidad > 0){
-						for(Pista p : lista_pistas){					
+						for(RobotUi p : lista_robotUi){					
 							if(p.radioButton.isSelected()){					
 								break;
 							}
 							i++;			
 						}
-						Pista pis =lista_pistas.get(i);
-						modelo.Robot roboLoco = robots.get(i);
+						RobotUi robotUi =lista_robotUi.get(i);
+						modelo.Robot roboLoco =pistaDeBaile.getRobots().get(i);
 						Paso paso= new Paso();
 						paso.setMovimiento(Movimiento.GIRO);
 						try
@@ -139,7 +162,7 @@ public class Ventana extends JFrame{
 							paso.setVelocidad(1);
 						}
 						roboLoco.getRitmo().getPasos().add(paso);
-						pis.area.append("giro; \n");
+						robotUi.area.append("giro; \n");
 					}
 					
 				}
@@ -151,14 +174,14 @@ public class Ventana extends JFrame{
 				public void actionPerformed(ActionEvent e) {
 					int i = 0;
 					if(cantidad > 0){
-						for(Pista p : lista_pistas){					
+						for(RobotUi p : lista_robotUi){					
 							if(p.radioButton.isSelected()){					
 								break;
 							}
 							i++;			
 						}
-						Pista pis =lista_pistas.get(i);
-						modelo.Robot roboLoco = robots.get(i);
+						RobotUi robotUi =lista_robotUi.get(i);
+						modelo.Robot roboLoco = pistaDeBaile.getRobots().get(i);
 						Paso paso= new Paso();
 						paso.setMovimiento(Movimiento.AVANCE);
 						try
@@ -173,7 +196,7 @@ public class Ventana extends JFrame{
 							paso.setVelocidad(1);
 						}
 						roboLoco.getRitmo().getPasos().add(paso);
-						pis.area.append("avance; \n");
+						robotUi.area.append("avance; \n");
 					}
 					
 				}
@@ -185,14 +208,14 @@ public class Ventana extends JFrame{
 				public void actionPerformed(ActionEvent e) {
 					int i = 0;
 					if(cantidad > 0){
-						for(Pista p : lista_pistas){					
+						for(RobotUi p : lista_robotUi){					
 							if(p.radioButton.isSelected()){					
 								break;
 							}
 							i++;			
 						}
-						Pista pis =lista_pistas.get(i);
-						modelo.Robot roboLoco = robots.get(i);
+						RobotUi robotUi =lista_robotUi.get(i);
+						modelo.Robot roboLoco = pistaDeBaile.getRobots().get(i);
 						Paso paso= new Paso();
 						paso.setMovimiento(Movimiento.RETROCESO);
 						try
@@ -207,7 +230,7 @@ public class Ventana extends JFrame{
 							paso.setVelocidad(1);
 						}
 						roboLoco.getRitmo().getPasos().add(paso);
-						pis.area.append("retroceso; \n");
+						robotUi.area.append("retroceso; \n");
 					}
 					
 				}
@@ -219,14 +242,14 @@ public class Ventana extends JFrame{
 				public void actionPerformed(ActionEvent e) {
 					int i = 0;
 					if(cantidad > 0){
-						for(Pista p : lista_pistas){					
+						for(RobotUi p : lista_robotUi){					
 							if(p.radioButton.isSelected()){					
 								break;
 							}
 							i++;			
 						}
-						Pista pis =lista_pistas.get(i);
-						modelo.Robot roboLoco = robots.get(i);
+						RobotUi robotUi =lista_robotUi.get(i);
+						modelo.Robot roboLoco = pistaDeBaile.getRobots().get(i);
 						Paso paso= new Paso();
 						paso.setMovimiento(Movimiento.IZQUIERDA);
 						try
@@ -241,7 +264,7 @@ public class Ventana extends JFrame{
 							paso.setVelocidad(1);
 						}
 						roboLoco.getRitmo().getPasos().add(paso);
-						pis.area.append("izquierda; \n");
+						robotUi.area.append("izquierda; \n");
 					}
 					
 				}
@@ -254,14 +277,14 @@ public class Ventana extends JFrame{
 				public void actionPerformed(ActionEvent e) {
 					int i = 0;
 					if(cantidad > 0){
-						for(Pista p : lista_pistas){					
+						for(RobotUi p : lista_robotUi){					
 							if(p.radioButton.isSelected()){					
 								break;
 							}
 							i++;			
 						}
-						Pista pis =lista_pistas.get(i);
-						modelo.Robot roboLoco = robots.get(i);
+						RobotUi robotUi =lista_robotUi.get(i);
+						modelo.Robot roboLoco = pistaDeBaile.getRobots().get(i);
 						Paso paso= new Paso();
 						paso.setMovimiento(Movimiento.DERECHA);
 						try
@@ -276,7 +299,7 @@ public class Ventana extends JFrame{
 							paso.setVelocidad(1);
 						}
 						roboLoco.getRitmo().getPasos().add(paso);
-						pis.area.append("derecha; \n");
+						robotUi.area.append("derecha; \n");
 					}
 					
 				}
@@ -287,70 +310,26 @@ public class Ventana extends JFrame{
 			botones.add(label_tiempo);
 			botones.add(tiempo);
 			tiempo.setText("1");
-	
 		}
 		
 		{
 			this.getContentPane().add(cabeza,BorderLayout.BEFORE_FIRST_LINE);
 			cabeza.add(titulo);
 			cabeza.add(comenzar);
+			cabeza.add(consola);
 			comenzar.addActionListener(new ActionListener() {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					int ritmo_maximo = 0;
-					for(modelo.Robot r : robots){
-						if(r.getRitmo().getPasos().size() > ritmo_maximo){
-							ritmo_maximo = r.getRitmo().getPasos().size();
-						}
-					}
-					
-					int i = 0;
-					modelo.Robot robot;
-					while(i< ritmo_maximo){
-						for(int j = 0; j < robots.size();j++){
-							robot = robots.get(j);		
-							Pista pista = lista_pistas.get(j);
-							if(robot.getRitmo().getPasos().size()>i){
-							    Paso p= robot.getRitmo().getPasos().get(i);
-								String muestra = "velocidad: "+p.getVelocidad()+", tiempo: "+p.getTiempo()+", movimento: "+p.getMovimiento().name()+"\n";
-						
-								
-								pista.area.append(muestra);
-						
-								
-							}else{
-								pista.area.append("termino. \n");
-							
-							
-							}
-							
-							
-						}
-					
-						i++;
-						try {
-							Thread.currentThread();
-							Thread.sleep(1000);
-						} catch (InterruptedException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
-							
-					}
-								
-					
-					
-				}
+							Thread t = new Thread(yo);
+							t.start();}
 			});
 		}
-		{
+		
 			this.getContentPane().add(centro,BorderLayout.CENTER);
 			centro.setLayout(new BorderLayout());
-			
-			
-		
 			BufferedImage myPicture;
+			
 			try {
 				myPicture = ImageIO.read(new File("images/robot.png"));
 				JLabel picLabel = new JLabel(new ImageIcon(myPicture));
@@ -358,48 +337,30 @@ public class Ventana extends JFrame{
 				centro.add(eleccion,BorderLayout.WEST);
 				eleccion.add(picLabel,BorderLayout.NORTH);
 				JButton boton = new JButton("agregar Robot");
+				boton.setSize(20, 10);
 				boton.addActionListener(new ActionListener() {
 					
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						
 					    modelo.Robot r = new modelo.Robot();
 					    r.setNombre("fulanito"+cantidad);
 					    r.setRitmo(new Ritmo());
-					    robots.add(r);
-						Pista pista = new Pista();
-						if(cantidad == 0){
-							pista.radioButton.setSelected(true);
-						}
-						lista_pistas.add(pista);
+						pistaDeBaile.getRobots().add(r);
+					    RobotUi robotUi = new RobotUi();
+						robotUi.radioButton.setSelected(true);
+						lista_robotUi.add(robotUi);
 						cantidad++;
-					    pistas.add(pista);
-					    
+					    pistas.add(robotUi);
 					    validate();
-						repaint();
-					   
-					     
-
-						
+						repaint();	
 					}
 				});
-				eleccion.add(boton,BorderLayout.CENTER);
-				
-				
-				centro.add(pistas);
-				
-				
-				
-				
+				eleccion.add(boton,BorderLayout.CENTER);	
+				centro.add(pistas);	
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}	
 			
-			
-		}
-			
-		
 	}
 	
 	public static void main(String[] arg){
@@ -407,4 +368,166 @@ public class Ventana extends JFrame{
 		v.setVisible(true);
 		
 	}
+	@Override
+	public void run() {
+		//esto vendria a ser la parte de la entrega 2
+		printSteps();
+		//Aqui armo el json
+		String query = armJson();
+		//Envio el json armado al server
+		SendRequets(query);
+	}
+
+	
+	/*Envio el json al servidor*/
+	@SuppressWarnings({ "unchecked", "resource", "unused" })
+	private void SendRequets(String query){	
+		Class<PistaDeBaile> clasePista = (Class<PistaDeBaile>) pistaDeBaile.getClass();
+		RemoteBot rem = (RemoteBot) clasePista.getAnnotation(RemoteBot.class);
+		String config = rem.conf();
+		try {
+		    File archivo = new File (config);
+			FileReader fr;
+			fr = new FileReader (archivo);
+			BufferedReader br = new BufferedReader(fr);
+			String direccion = br.readLine();
+			int pos = direccion.indexOf(":")+1;
+			direccion = direccion.substring(pos);
+			String puerto  =  br.readLine();
+			pos = puerto.indexOf(":")+1;
+			puerto = puerto.substring(pos);
+		    URL url = new URL(direccion+":"+puerto); 
+		    HttpURLConnection connection = (HttpURLConnection) url.openConnection();           
+		    connection.setDoOutput(true); 
+		    connection.setInstanceFollowRedirects(false); 
+		    connection.setRequestMethod("POST"); 
+		    connection.setRequestProperty("Content-Type", "text/plain"); 
+		    connection.setRequestProperty("charset", "utf-8");
+		    connection.connect();
+		    java.io.DataOutputStream output = new java.io.DataOutputStream(connection.getOutputStream());
+		    output.writeBytes(query);
+		    
+		    consola.setText("Estado: Se obtuvo una conexion exitosa");
+		    consola.setForeground(Color.GREEN);
+		    java.io.DataInputStream input = new java.io.DataInputStream(connection.getInputStream());
+		    
+		    
+		} catch (FileNotFoundException e) {
+			consola.setText("Estado: hubo un error con el archivo");
+			consola.setForeground(Color.RED);
+		} catch (IOException e) {
+			consola.setText("Estado: Hay un error con el servidor");
+			consola.setForeground(Color.RED);
+		}		
+	}
+	
+	
+	
+	/*Aqui armo los json, vi muchas Herramientas 
+	 * que me simplificaban el problema, aunque no sabia si era valido, 
+	 * arme el json a mano.
+	 * Aqui uso las dos anotaciones @Robots y @Ritmo */
+	@SuppressWarnings("unchecked")
+	private String armJson(){		
+		ArrayList<modelo.Robot> robots = null;		
+		Class<PistaDeBaile> clasePista = (Class<PistaDeBaile>) pistaDeBaile.getClass();
+		for(Method m : clasePista.getMethods()){		
+			if(m.isAnnotationPresent(Robots.class)){
+				 try {
+					robots = (ArrayList<Robot>) m.invoke(pistaDeBaile,new Object[0]);
+				} catch (IllegalAccessException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IllegalArgumentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (InvocationTargetException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}		
+			}		
+		}
+		String query= "[";	
+		if(robots != null){
+			for(modelo.Robot r : robots){
+				String json = "{Robot: { nombre : "+r.getNombre()+", ritmo : ";	
+				String rit_json = "[";
+				for(Method m : r.getClass().getMethods()){
+					Ritmo ritmo;
+					if(m.isAnnotationPresent(anotaciones.Ritmo.class)){
+						try {
+							 ritmo = (Ritmo) m.invoke(r, new Object[0]);
+							 rit_json = "[";
+							 for(Paso p : ritmo.getPasos()){
+								rit_json += p+",";		 
+							 }						
+						} catch (IllegalAccessException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IllegalArgumentException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (InvocationTargetException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}					
+						rit_json += "]";
+						json += rit_json+"}},";	
+						break;					
+					}				
+				}
+				query += json; 		
+			} 
+			 query += "]";		
+		}		
+		return query;
+	}
+	
+	
+	/* Imprimo en la ventana los pasos, esto vendria a ser 
+	 * la entrega dos mas una mejora, le puse todo en Thread 
+	 * y no tiene ese lag e imprime todo paso por paso  */
+	private void printSteps(){
+		
+		int ritmo_maximo = 0;
+		for(modelo.Robot r : pistaDeBaile.getRobots()){
+			if(r.getRitmo().getPasos().size() > ritmo_maximo){
+				ritmo_maximo = r.getRitmo().getPasos().size();
+			}
+		}	
+		int i = 0;
+		modelo.Robot robot;
+		while(i< ritmo_maximo){
+			for(int j = 0; j < pistaDeBaile.getRobots().size();j++){
+				robot = pistaDeBaile.getRobots().get(j);		
+				RobotUi robotUi = lista_robotUi.get(j);
+				if(robot.getRitmo().getPasos().size()>i){
+				    Paso p= robot.getRitmo().getPasos().get(i);
+					String muestra = "velocidad: "+p.getVelocidad()+", tiempo: "+p.getTiempo()+", movimento: "+p.getMovimiento().name()+"\n";
+					robotUi.area.append(muestra);				
+				}else{
+					robotUi.area.append("termino. \n");			
+				}			
+			}
+			i++;
+			try {
+				Thread.currentThread();
+				Thread.sleep(1000);
+			} catch (InterruptedException e1) {
+				
+				e1.printStackTrace();
+			}	
+		}
+		
+		
+	}
+	
+
+	
+	
+	
+	
+
+		
+	
 }

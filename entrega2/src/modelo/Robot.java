@@ -16,9 +16,8 @@ public class Robot {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	/**
-	 * @return the ritmo
-	 */
+	
+	@anotaciones.Ritmo
 	public Ritmo getRitmo() {
 		return ritmo;
 	}

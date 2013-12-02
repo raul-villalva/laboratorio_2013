@@ -16,7 +16,7 @@ public enum Movimiento {
 		nombre = mov;
 	}
 	
-	String getNombre(){
+	public String getNombre(){
 		return nombre;
 	}
 
